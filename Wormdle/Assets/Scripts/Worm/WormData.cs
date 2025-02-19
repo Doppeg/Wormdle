@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum WormStats   //plan for stats is to use the following formula            Statistic = base + bonus + Growth * (Level-1) * (0.7025+0.0175*(Level-1))
+public enum WormStats   //plan for stats is to use the following formula
 {
     Area,//base size of dig area
-    AreaGrowth,
     Strength,//base power of digs
-    StrengthGrowth,
     Speed,//base frequency of digs
-    SpeedGrowth
 
 }
 public enum WormTraits  //synergies             temp placeholder ones
@@ -37,7 +34,7 @@ public class WormValueContainer     //for stats
 [Serializable]
 public class WormValueBlock     //for stats
 {
-    private const int WormStatsCount = 6;
+    private const int WormStatsCount = 3;
     public List<WormValueContainer> values;
     public void InitWorm()
     {
@@ -62,7 +59,7 @@ public class WormTraitContainer     //for traits
 [Serializable]
 public class WormTraitBlock     //for traits
 {
-    private const int WormTraitCount = 3;
+    private const int WormTraitCount = 2;
     public List<WormTraitContainer> traits;
     public void InitWorm()
     {
@@ -75,13 +72,15 @@ public class WormTraitBlock     //for traits
 }
 
 [CreateAssetMenu(menuName = "Data/Worm")]
-public class WormData : ScriptableObject
+public class WormData : ScriptableObject    //the worm object itself
 {
     public string wormName;
+    public Sprite sprite;
+    public string description;
     public WormValueBlock stats;
     public WormTraitBlock traits;
     [ContextMenu("Init")]
-    public void init()
+    public void init()  //sets up a blank worm in the inspector
     {
         stats = new WormValueBlock();
         stats.InitWorm();

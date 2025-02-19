@@ -10,25 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ee5b9a607c041d478dae9d05dbdf585, type: 3}
-  m_Name: Brown Worm - Example
+  m_Name: Brown Worm
   m_EditorClassIdentifier: 
   wormName: Brown Worm
+  sprite: {fileID: 0}
+  description: A basic Earthworm
   stats:
     values:
-    - value: 1
-      stats: 0
     - value: 0
+      stats: 0
+    - value: 1
       stats: 1
     - value: 1
       stats: 2
-    - value: 0.1
-      stats: 3
-    - value: 1
-      stats: 4
-    - value: 0.05
-      stats: 5
   traits:
     traits:
     - traits: 1
-    - traits: 0
     - traits: 0
